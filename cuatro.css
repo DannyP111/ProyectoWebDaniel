@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Inicio Header */
+.slider-container {
+    background-image: url(rest1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.transparent-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    background: none; /* Eliminamos cualquier color de fondo */
+}
+
+.transparent-header nav ul {
+    background-color: transparent; /* Hacemos el fondo de la lista transparente */
+    padding: 0;
+    text-align: center; /* Centramos los elementos */
+}
+
+.transparent-header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    border: 2px solid transparent; /* Añadimos un borde transparente */
+    border-radius: 5px;
+}
+
+.transparent-header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 8px 16px;
+    transition: border-color 0.3s, background-color 0.3s; /* Añadimos una transición para el color del borde y el fondo */
+}
+
+.transparent-header nav ul li a:hover {
+    border-color: rgb(255, 94, 0); /* Cambiamos el color del borde al pasar el ratón por encima */
+    background-color: rgb(255, 94, 0); /* Añadimos el tono naranja al fondo */
+    border-radius: 10px;
+}
+
+.transparent-header nav ul li a.active {
+    background-color: rgb(255, 136, 0);
+    border-color: rgb(255, 136, 0);
+    color: #333;
+}
+
+.transparent-header nav ul li a.active:hover {
+    border-color: rgb(255, 136, 0);
+}
+
+/* Fin Header */
+
+/* Inicio Slider */
+.slider {
+    background-image: url(rest1.jpg);   
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    animation: animate 20s infinite;
+    position: relative;
+    z-index: 1;
+}
+/* Texto encima de imagen */
+.texto-img {
+    text-align: center;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+@keyframes animate {
+    0% {
+        background-image: url(rest7.jpg);
+    }
+    20% {
+        background-image: url(rest2.jpg);
+    }
+    40% {
+        background-image: url(rest3.jpg);
+    }
+    60% {
+        background-image: url(rest4.jpg);
+    }
+    80% {
+        background-image: url(rest5.jpg);
+    }
+    100% {
+        background-image: url(rest6.jpg);
+    }
+}
+/* Fin Slider */
+
+/* Acerca de */
+.acerca-de {
+    position: relative;
+    background-image: url('papas.png');
+    background-size: auto 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: #000000;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acerca-de .inner-column {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.reserva img {
+    margin-top: -50px; /* Ajusta este valor según sea necesario para subir la imagen */
+}
+
+.reserva {
+    float: right; /* Esto coloca el contenedor de la imagen a la izquierda */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+
+
