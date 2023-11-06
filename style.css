@@ -1,149 +1,424 @@
-:root{
-    --red:#ff0000;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
 }
 
-html{
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
-    overflow-x: hidden;
+:root {
+  --main-color: #ff702a;
+  --text-color: #fff;
+  --bg-color: #000000;
+  --big-font: 5rem;
+  --h2-font: 2.25rem;
+  --p-font: 0.9rem;
+}
+
+*::selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--bg-color);
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    padding: 2rem 9%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  background-color: #ffffff;
+  padding: 10px 0;
+  position: relative;
+  z-index: 2;
 }
 
-header .logo {
-    font-size: 3rem;
-    color: #333;
-    font-weight: bolder;
+/* Inicio Header */
+.slider-container {
+  background-image: url(rest1.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
-header .logo span {
-    color:var(--red);
+.transparent-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  background: none; /* Eliminamos cualquier color de fondo */
 }
 
-header .navbar a{
-    font-size: 2rem;
-    padding: 0 1.5rem;
-    color: #666;
+.transparent-header nav ul {
+  background-color: transparent; /* Hacemos el fondo de la lista transparente */
+  padding: 0;
+  text-align: center; /* Centramos los elementos */
 }
 
-header .navbar a:hover{
-    color: var(--red);
+.transparent-header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+  border: 2px solid transparent; /* Añadimos un borde transparente */
+  border-radius: 5px;
 }
 
-header .icons a{
-    font-size: 2.5rem;
-    color: #333;
-    margin-left: 1.5rem;
+.transparent-header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 8px 16px;
+  transition: border-color 0.3s, background-color 0.3s; /* Añadimos una transición para el color del borde y el fondo */
 }
 
-header .icons a:hover{
-    color: var(--red);
+.transparent-header nav ul li a:hover {
+  border-color: rgb(
+    255,
+    94,
+    0
+  ); /* Cambiamos el color del borde al pasar el ratón por encima */
+  background-color: rgb(255, 94, 0); /* Añadimos el tono naranja al fondo */
+  border-radius: 10px;
 }
 
-header #toggler{
-    display: none;
+.transparent-header nav ul li a.active {
+  background-color: rgb(255, 136, 0);
+  border-color: rgb(255, 136, 0);
+  color: #333;
 }
 
-header .fa-bars{
-    font-size: 3rem;
-    color: #333;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    cursor: pointer;
-    border: .1rem solid rgba(0, 0, 0, .3);
-    display: none;
+.transparent-header nav ul li a.active:hover {
+  border-color: rgb(255, 136, 0);
+}
+
+/* Fin Header */
+
+/* Inicio Slider */
+.slider {
+  background-image: url(rest1.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  animation: animate 20s infinite;
+  position: relative;
+  z-index: 1;
+}
+/* Texto encima de imagen */
+.texto-img {
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+@keyframes animate {
+  0% {
+    background-image: url(rest7.jpg);
+  }
+  20% {
+    background-image: url(rest2.jpg);
+  }
+  40% {
+    background-image: url(rest3.jpg);
+  }
+  60% {
+    background-image: url(rest4.jpg);
+  }
+  80% {
+    background-image: url(rest5.jpg);
+  }
+  100% {
+    background-image: url(rest6.jpg);
+  }
+}
+/* Fin Slider */
+
+/* About Us */
+.papitas {
+  padding: 10px 0px;
+  background: #ffffff url(about.jpg) no-repeat bottom center;
+  background-size: cover;
+}
+.contenedor {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #000000;
+  padding: 100px 0;
+}
+
+.columna-izquierda {
+  flex: 1;
+  padding: 40px;
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1.9; /* Ajusta el espacio entre las lineas */
+}
+
+.columna-derecha {
+    flex: 1;
+    padding: 20px;
+    text-align: left; /* Cambiado a izquierda */
+  }
+  
+  .imagen-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left; /* Alinea la imagen a la izquierda */
+  }
+  
+/* Fin About Us */
+
+/*------------------------------------------------------------------
+    QT
+-------------------------------------------------------------------*/
+
+
+.qt-background {
+  background: url(patodonald.jpg) no-repeat;
+  background-size: 100%;
+  padding: 100px 0;
+  background-attachment: fixed;
+  background-position: center center;
+  position: relative;
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+}
+
+.qt-background p {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 44px;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  margin-bottom: 20px;
+}
+
+.qt-background span {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* media queries */
-@media (max-width:991px){
-
-    html{
-        font-size: 55%;
-    }
-
-    header{
-        padding: 2rem;
-    }
+/* Menu Giratoria */
+.menu {
+  text-align: center;
 }
 
-@media (max-width:768px){
-    
-    header .fa-bars{
-        display: block;
-    }
-
-    header .navbar{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #eee;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-
-    header #toggler:checked ~ .navbar{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    }
-
-
-    header .navbar a{
-        margin: 1.5rem;
-        padding: 1.5rem;
-        background: #fff;
-        border: .1rem solid rgba(0, 0, 0, .1);
-        display: block;
-    }
+.giratoria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (max-width:450px){
+.card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+  perspective: 600px;
+}
 
-    html{
-        font-size: 50%;
-    }
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.card .front {
+  transform: perspective(600px) rotate(0deg);
+  box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0,.4);
+  text-align: center;
+}
+
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(248, 8, 8);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+.card .back .link a {
+  color: #f3f3f3;
+}
+
+.card .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card .back p {
+  letter-spacing: 1px;
+}
+
+/* Rotacion */
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
 
 
+/* Formulario */
+
+.formulario-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 1000px;
+}
+
+.formulario-reserva {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: calc(50% - 10px);
+}
+
+.campo label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.campo input,
+.campo textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.campo input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+.boton-envio {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .campo {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  width: 30%; /* Ajusta el ancho de cada sección según tus preferencias */
+  text-align: center; /* Alinea el texto a la izquierda */
+}
+
+.footer-section img {
+  width: 20px; /* Reducir el tamaño de los iconos */
+  margin-bottom: 10px; /* Espacio entre los íconos y el texto */
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none; /* Evita subrayar los enlaces */
+}
+
+.footer-credits {
+  margin-top: 20px;
+}
+
+.footer-section .social-icons {
+  display: flex;
+}
+
+.footer-section .social-icons a {
+  margin-right: 10px; /* Espacio entre los iconos */
 }
