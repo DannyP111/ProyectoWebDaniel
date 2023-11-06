@@ -84,7 +84,6 @@
     </div>
     <!-- End QT -->
 
-
     <!-- Giratoria -->
     <section class="menu" id="menu">
       <div class="heading">
@@ -92,9 +91,8 @@
         <h2>Sabor fresco y buen precio</h2>
       </div>
     </section>
-    
-    <div class="giratoria">
 
+    <div class="giratoria">
       <div class="card">
         <div class="face front">
           <img src="menu1.jpg" alt="" />
@@ -151,7 +149,6 @@
         </div>
       </div>
 
-
       <div class="card">
         <div class="face front">
           <img src="menu1.jpg" alt="" />
@@ -221,7 +218,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="face front">
           <img src="menu1.jpg" alt="" />
@@ -337,27 +334,73 @@
 
     <!-- Reservas -->
     <h1>Formulario de Reserva</h1>
-    <form action="procesar_reserva.php" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
+    <div class="formulario-container">
+      <form action="procesar_reserva.php" method="POST" class="formulario-reserva">
+        <div class="campo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre aquí" />
+        </div>
     
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Email" />
+        </div>
     
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" name="fecha" required>
+        <div class="campo">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" required placeholder="Indica la fecha" />
+        </div>
     
-      <label for="hora">Hora:</label>
-      <input type="time" id="hora" name="hora" required>
+        <div class="campo">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora" required placeholder="Indica la hora" />
+        </div>
     
-      <label for="personas">Número de personas:</label>
-      <input type="number" id="personas" name="personas" required>
+        <div class="campo">
+          <label for="personas">Celular:</label>
+          <input type="text" id="celular" name="celular" required placeholder="Celular" />
+        </div>
+
+        <div class="campo">
+          <label for="personas">Número de personas:</label>
+          <input type="number" id="personas" name="personas" required placeholder="Para cuantas personas?" />
+        </div>
     
-      <label for="comentarios">Comentarios:</label>
-      <textarea id="comentarios" name="comentarios"></textarea>
+  
     
-      <input type="submit" value="Enviar reserva">
-    </form>
+        <input type="submit" value="Enviar reserva" class="boton-envio"/>
+      </form>
+    </div>
+    
+    <!-- Footer -->
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Horario</h3>
+          <p>Lunes a Viernes: 11:00am - 14:00pm</p>
+          <p>18:00pm - 22:00pm</p>
+          <p>Sábado y Domingo: 11:00am - 23:00pm</p>
+        </div>
+        <div class="footer-section">
+          <h3>Direccion y Contacto</h3>
+          <p>Calacoto calle 13</p>
+          <p>La Paz, Bolivia</p>
+          <p>Teléfono: +591 67136236</p>
+        </div>
+        <div class="footer-section">
+          <h3>Redes Sociales</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://twitter.com/"><img src="twitter.png" alt="Twitter"></a></li>
+            <li><a href="https://www.instagram.com/dan_ypalacios/"><img src="instagram.png" alt="Instagram"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-credits">
+        <p>© 2023 Restaurant Danny. Todos los derechos reservados.</p>
+      </div>
+    </footer>
     
 
   </body>
