@@ -1,98 +1,91 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-  list-style: none;
-  text-decoration: none;
-}
-
-:root {
-  --main-color: #ff702a;
-  --text-color: #fff;
-  --bg-color: #000000;
-  --big-font: 5rem;
-  --h2-font: 2.25rem;
-  --p-font: 0.9rem;
-}
-
-*::selection {
-  background: var(--main-color);
-  color: #fff;
-}
-
-body {
-  color: var(--text-color);
-  background: var(--bg-color);
+  font-family: sans-serif;
 }
 
 header {
-  background-color: #ffffff;
-  padding: 10px 0;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #ececec;
 }
 
-/* Inicio Header */
-.slider-container {
-  background-image: url(rest1.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+.logo {
+  max-width: 2rem;
 }
 
-.transparent-header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 2;
-  background: none; /* Eliminamos cualquier color de fondo */
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
 }
 
-.transparent-header nav ul {
-  background-color: transparent; /* Hacemos el fondo de la lista transparente */
-  padding: 0;
-  text-align: center; /* Centramos los elementos */
-}
-
-.transparent-header nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-  border: 2px solid transparent; /* Añadimos un borde transparente */
-  border-radius: 5px;
-}
-
-.transparent-header nav ul li a {
-  color: #ffffff;
+.nav-list li a {
   text-decoration: none;
-  font-size: 18px;
-  display: block;
-  padding: 8px 16px;
-  transition: border-color 0.3s, background-color 0.3s; /* Añadimos una transición para el color del borde y el fondo */
+  color: #1c1c1c;
 }
 
-.transparent-header nav ul li a:hover {
-  border-color: rgb(
-    255,
-    94,
-    0
-  ); /* Cambiamos el color del borde al pasar el ratón por encima */
-  background-color: rgb(255, 94, 0); /* Añadimos el tono naranja al fondo */
-  border-radius: 10px;
+.abrir-menu,
+.cerrar-menu {
+  display: none;
 }
 
-.transparent-header nav ul li a.active {
-  background-color: rgb(255, 136, 0);
-  border-color: rgb(255, 136, 0);
-  color: #333;
-}
+@media screen and (max-width: 550px) {
+  .abrir-menu,
+  .cerrar-menu {
+      display: block;
+      border: 0;
+      font-size: 1.25rem;
+      background-color: transparent;
+      cursor: pointer;
+  }
 
-.transparent-header nav ul li a.active:hover {
-  border-color: rgb(255, 136, 0);
+  .abrir-menu {
+      color: #1c1c1c;
+  }
+
+  .cerrar-menu {
+      color: #ececec;
+  }
+
+  .nav {
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #1c1c1c;
+      padding: 2rem;
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+      z-index: 2;
+  }
+
+  .nav.visible {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .nav-list {
+      flex-direction: column;
+      align-items: end;
+  }
+
+  .nav-list li a {
+      color: #ecececec;
+  }
 }
 
 /* Fin Header */
+
+
 
 /* Inicio Slider */
 .slider {
@@ -142,6 +135,7 @@ header {
   padding: 10px 0px;
   background: #ffffff url(about.jpg) no-repeat bottom center;
   background-size: cover;
+  background-color: #000000;
 }
 .contenedor {
   margin: 50px;
@@ -171,6 +165,27 @@ header {
     text-align: left; /* Alinea la imagen a la izquierda */
   }
   
+
+  /* Agregar una media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; /* Cambiar a diseño de columna */
+    margin: 20px; /* Reducir los márgenes */
+  }
+
+  .columna-izquierda,
+  .columna-derecha {
+    padding: 20px; /* Reducir el padding */
+    text-align: center; /* Centrar el texto */
+  }
+
+  .imagen-container img {
+    max-width: 100%; /* Hacer la imagen ocupar el 100% del contenedor */
+    height: auto; /* Ajustar la altura automáticamente */
+  }
+}
+
+
 /* Fin About Us */
 
 /*------------------------------------------------------------------

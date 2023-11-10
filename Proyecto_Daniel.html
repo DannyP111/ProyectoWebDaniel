@@ -2,32 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto Final Daniel</title>
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="style.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
   </head>
+
   <body>
-    <header class="transparent-header">
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#reservaciones">Reservaciones</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+    <header>
+      <img class="logo" src="logo.png" alt="Logo" />
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Reservaciones</a></li>
+          <li><a href="#">Contacto</a></li>
         </ul>
       </nav>
     </header>
@@ -40,6 +36,10 @@
     <div class="slider-container">
       <div class="slider position"></div>
     </div>
+
+    <script src="main.js"></script>
+
+    
 
     <!-- Start About -->
     <div class="papitas">
@@ -58,10 +58,9 @@
         <div class="columna-derecha">
           <div class="imagen-container">
             <img
-              src="carnes.jpg"
+              src="menu1.jpg"
               alt="Descripción de la imagen"
-              width="500px"
-              height="300px"
+              style="max-width: 100%; height: auto;"
             />
           </div>
         </div>
@@ -109,7 +108,7 @@
 
       <div class="card">
         <div class="face front">
-          <img src="menu2.jpg" alt="" />
+          <img src="menu4.jpg" alt="" />
           <h3>Pastas</h3>
         </div>
         <div class="face back">
@@ -123,7 +122,7 @@
 
       <div class="card">
         <div class="face front">
-          <img src="menu3.jpg" alt="" />
+          <img src="menu4.jpg " alt="" />
           <h3>Vinos</h3>
         </div>
         <div class="face back">
@@ -335,45 +334,83 @@
     <!-- Reservas -->
     <h1>Formulario de Reserva</h1>
     <div class="formulario-container">
-      <form action="procesar_reserva.php" method="POST" class="formulario-reserva">
+      <form
+        action="procesar_reserva.php"
+        method="POST"
+        class="formulario-reserva"
+      >
         <div class="campo">
           <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre aquí" />
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            required
+            placeholder="Escribe tu nombre aquí"
+          />
         </div>
-    
+
         <div class="campo">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required placeholder="Email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Email"
+          />
         </div>
-    
+
         <div class="campo">
           <label for="fecha">Fecha:</label>
-          <input type="date" id="fecha" name="fecha" required placeholder="Indica la fecha" />
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required
+            placeholder="Indica la fecha"
+          />
         </div>
-    
+
         <div class="campo">
           <label for="hora">Hora:</label>
-          <input type="time" id="hora" name="hora" required placeholder="Indica la hora" />
+          <input
+            type="time"
+            id="hora"
+            name="hora"
+            required
+            placeholder="Indica la hora"
+          />
         </div>
-    
+
         <div class="campo">
           <label for="personas">Celular:</label>
-          <input type="text" id="celular" name="celular" required placeholder="Celular" />
+          <input
+            type="text"
+            id="celular"
+            name="celular"
+            required
+            placeholder="Celular"
+          />
         </div>
 
         <div class="campo">
           <label for="personas">Número de personas:</label>
-          <input type="number" id="personas" name="personas" required placeholder="Para cuantas personas?" />
+          <input
+            type="number"
+            id="personas"
+            name="personas"
+            required
+            placeholder="Para cuantas personas?"
+          />
         </div>
-    
-  
-    
-        <input type="submit" value="Enviar reserva" class="boton-envio"/>
+
+        <input type="submit" value="Enviar reserva" class="boton-envio" />
       </form>
     </div>
-    
+
     <!-- Footer -->
-    
+
     <footer>
       <div class="footer-container">
         <div class="footer-section">
@@ -391,9 +428,21 @@
         <div class="footer-section">
           <h3>Redes Sociales</h3>
           <ul>
-            <li><a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook"></a></li>
-            <li><a href="https://twitter.com/"><img src="twitter.png" alt="Twitter"></a></li>
-            <li><a href="https://www.instagram.com/dan_ypalacios/"><img src="instagram.png" alt="Instagram"></a></li>
+            <li>
+              <a href="https://www.facebook.com/"
+                ><img src="facebook.png" alt="Facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/"
+                ><img src="twitter.png" alt="Twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/dan_ypalacios/"
+                ><img src="instagram.png" alt="Instagram"
+              /></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -401,7 +450,5 @@
         <p>© 2023 Restaurant Danny. Todos los derechos reservados.</p>
       </div>
     </footer>
-    
-
   </body>
 </html>
