@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+body{
+  background-color: #89120C;
+  scroll-behavior: smooth;
+}
 
 header {
   display: flex;
@@ -11,10 +15,12 @@ header {
   justify-content: space-between;
   padding: 2rem;
   background-color: #ececec;
+  height: 80px;
 }
 
 .logo {
-  max-width: 2rem;
+  max-height: 500%; /* Hace que el logo se ajuste a la altura del header */
+  height: auto;
 }
 
 .nav-list {
@@ -23,9 +29,18 @@ header {
   gap: 1rem;
 }
 
+.nav-list li {
+  /* Añade estilos para el cuadrado bordeado */
+  border: 2px solid #000;
+  padding: 0.5rem; /* Ajusta el espaciado interno del cuadrado */
+  border-radius: 5px; /* Agrega esquinas redondeadas */
+  background-color: #000; /* Color de fondo del cuadrado */
+}
+
 .nav-list li a {
   text-decoration: none;
-  color: #1c1c1c;
+  color: #fff; /* Cambia el color del texto a blanco */
+  font-weight: bold; /* Hace que el texto sea más grueso */
 }
 
 .abrir-menu,
@@ -36,60 +51,64 @@ header {
 @media screen and (max-width: 550px) {
   .abrir-menu,
   .cerrar-menu {
-      display: block;
-      border: 0;
-      font-size: 1.25rem;
-      background-color: transparent;
-      cursor: pointer;
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   .abrir-menu {
-      color: #1c1c1c;
+    color: #1c1c1c;
   }
 
   .cerrar-menu {
-      color: #ececec;
+    color: #ececec;
   }
 
   .nav {
-      opacity: 0;
-      visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      gap: 1rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #1c1c1c;
-      padding: 2rem;
-      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-      z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    z-index: 2;
   }
 
   .nav.visible {
-      opacity: 1;
-      visibility: visible;
+    opacity: 1;
+    visibility: visible;
   }
-  
+
   .nav-list {
-      flex-direction: column;
-      align-items: end;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .nav-list li {
+    border: 2px solid #fff; /* Cambia el color del borde a blanco */
+    background-color: #fff; /* Cambia el color de fondo del cuadrado a blanco */
   }
 
   .nav-list li a {
-      color: #ecececec;
+    color: #1c1c1c; /* Cambia el color del texto a negro */
+    font-weight: bold; /* Hace que el texto sea más grueso */
   }
 }
 
 /* Fin Header */
 
-
-
 /* Inicio Slider */
 .slider {
-  background-image: url(rest1.jpg);
+  background-image: url(menu1.jpg);
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -110,22 +129,22 @@ header {
 }
 @keyframes animate {
   0% {
-    background-image: url(rest7.jpg);
+    background-image: url(home1.png);
   }
   20% {
-    background-image: url(rest2.jpg);
+    background-image: url(home2.jpg);
   }
   40% {
-    background-image: url(rest3.jpg);
+    background-image: url(home3.jpeg);
   }
   60% {
-    background-image: url(rest4.jpg);
+    background-image: url(menu10.jpg);
   }
   80% {
-    background-image: url(rest5.jpg);
+    background-image: url(home6.jpg);
   }
   100% {
-    background-image: url(rest6.jpg);
+    background-image: url(home7.jpg);
   }
 }
 /* Fin Slider */
@@ -144,6 +163,8 @@ header {
   position: relative;
   color: #000000;
   padding: 100px 0;
+  font-weight: bold;
+  font-size: 120%;
 }
 
 .columna-izquierda {
@@ -154,19 +175,19 @@ header {
 }
 
 .columna-derecha {
-    flex: 1;
-    padding: 20px;
-    text-align: left; /* Cambiado a izquierda */
-  }
-  
-  .imagen-container {
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: left; /* Alinea la imagen a la izquierda */
-  }
-  
+  flex: 1;
+  padding: 20px;
+  text-align: left; /* Cambiado a izquierda */
+}
 
-  /* Agregar una media query para pantallas más pequeñas */
+.imagen-container img{
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left; /* Alinea la imagen a la izquierda */
+  border-radius: 10px;
+}
+
+/* Agregar una media query para pantallas más pequeñas */
 @media (max-width: 768px) {
   .contenedor {
     flex-direction: column; /* Cambiar a diseño de columna */
@@ -185,14 +206,11 @@ header {
   }
 }
 
-
 /* Fin About Us */
 
 /*------------------------------------------------------------------
     QT
 -------------------------------------------------------------------*/
-
-
 .qt-background {
   background: url(patodonald.jpg) no-repeat;
   background-size: 100%;
@@ -208,7 +226,7 @@ header {
   font-weight: 300;
   line-height: 44px;
   color: #fff;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   margin-bottom: 20px;
 }
 
@@ -217,9 +235,6 @@ header {
   font-size: 28px;
   font-weight: 600;
 }
-
-
-
 
 /* Menu Giratoria */
 .menu {
@@ -247,7 +262,7 @@ header {
   backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .card .front {
@@ -269,13 +284,13 @@ header {
   height: 45px;
   line-height: 45px;
   color: #fff;
-  background: rgba(0, 0, 0,.4);
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
 .card .back {
-  transform: perspective(600px) rotateY(180deg);
-  background: rgb(248, 8, 8);
+  transform: perspective(600px) rotateY(180deg);  
+  background: rgb(0, 0, 0);
   padding: 15px;
   color: #f3f3f3;
   display: flex;
@@ -293,6 +308,9 @@ header {
 
 .card .back .link a {
   color: #f3f3f3;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .card .back h3 {
@@ -314,9 +332,11 @@ header {
   transform: perspective(600px) rotateY(360deg);
 }
 
-
 /* Formulario */
 
+.h1-reservas{
+  text-align: center;
+}
 .formulario-container {
   background-color: #fff;
   border-radius: 10px;
@@ -355,7 +375,7 @@ header {
 }
 
 .campo input[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   cursor: pointer;
   padding: 10px 20px;
@@ -363,7 +383,6 @@ header {
   border-radius: 5px;
   font-size: 16px;
 }
-
 
 .boton-envio {
   background-color: rgb(0, 0, 0);
@@ -375,7 +394,6 @@ header {
   cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
   .campo {
     width: 100%;
@@ -385,7 +403,7 @@ header {
 /* Footer */
 
 footer {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   padding: 20px;
   text-align: center;
